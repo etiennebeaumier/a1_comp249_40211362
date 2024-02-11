@@ -69,7 +69,7 @@ public class Journals extends Items {
     public String toString() {
         return "Journal " + "ID='" + getID() + '\'' +
                 ", the title is '" + getTitle() + '\'' +
-                ", the author is'" + getAuthor() + '\'' +
+                ", the author is '" + getAuthor() + '\'' +
                 ", the publication year is " + getPublicationYear() +
                 " and the volume number is " + volumeNumber;
     }

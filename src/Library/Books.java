@@ -69,8 +69,8 @@ public class Books extends Items {
     public String toString() {
         return "Book " + "ID='" + getID() + '\'' +
                 ", the title is '" + getTitle() + '\'' +
-                ", the author is'" + getAuthor() + '\'' +
-                ", and the publication year is " + getPublicationYear() +
+                ", the author is '" + getAuthor() + '\'' +
+                ", the publication year is " + getPublicationYear() +
                 " and has " + nbOfPages + " pages";
     }
 
