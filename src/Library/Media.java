@@ -12,10 +12,8 @@ constructors, getters, setters, and methods to represent the media item as a str
 
 package Library;
 
-public class Media extends Items {
+public class Media extends Items implements LibraryItem {
 
-    // Counter to generate unique IDs
-    private static int counter;
     // Type of the media
     private String type;
 
@@ -23,36 +21,30 @@ public class Media extends Items {
     public Media() {
         // Call the constructor of the superclass
         super();
-        // Increment the counter
-        counter++;
         // Set the type to "NA"
         this.type = "NA";
         // Set the ID with a prefix "M"
-        setID("M" + counter);
+        super.setID("M" + getCounter());
     }
 
     // Constructor with parameters
     public Media(String title, String author, int publicationYear, String type) {
         // Call the constructor of the superclass with parameters
         super(title, author, publicationYear);
-        // Increment the counter
-        counter++;
         // Set the type
         this.type = type;
         // Set the ID with a prefix "M"
-        setID("M" + counter);
+        super.setID("M" + getCounter());
     }
 
     // Copy constructor
     public Media(Media media) {
         // Call the constructor of the superclass with parameters
         super(media.getTitle(), media.getAuthor(), media.getPublicationYear());
-        // Increment the counter
-        counter++;
         // Copy the type
         this.type = media.type;
         // Set the ID with a prefix "M"
-        setID("M" + counter);
+        super.setID("M" + getCounter());
     }
 
     // Getter and setter for the type

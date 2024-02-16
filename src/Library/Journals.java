@@ -12,10 +12,9 @@ includes constructors, getters, setters, and methods to represent the journal as
 
 package Library;
 
-public class Journals extends Items {
+public class Journals extends Items implements LibraryItem{
 
-    // Counter to generate unique IDs
-    private static int counter;
+
     // Volume number of the journal
     private int volumeNumber;
 
@@ -23,36 +22,30 @@ public class Journals extends Items {
     public Journals() {
         // Call the constructor of the superclass
         super();
-        // Increment the counter
-        counter++;
         // Set the volume number to 0
         this.volumeNumber = 0;
         // Set the ID with a prefix "J"
-        setID("J" + counter);
+        super.setID("J" + getCounter());
     }
 
     // Constructor with parameters
     public Journals(String title, String author, int publicationYear, int volumeNumber) {
         // Call the constructor of the superclass with parameters
         super(title, author, publicationYear);
-        // Increment the counter
-        counter++;
         // Set the volume number
         this.volumeNumber = volumeNumber;
         // Set the ID with a prefix "J"
-        setID("J" + counter);
+        super.setID("J" + getCounter());
     }
 
     // Copy constructor
     public Journals(Journals journals) {
         // Call the constructor of the superclass with parameters
         super(journals.getTitle(), journals.getAuthor(), journals.getPublicationYear());
-        // Increment the counter
-        counter++;
         // Copy the volume number
         this.volumeNumber = journals.volumeNumber;
         // Set the ID with a prefix "J"
-        setID("J" + counter);
+        super.setID("J" + getCounter());
     }
 
     // Getter and setter for the volume number

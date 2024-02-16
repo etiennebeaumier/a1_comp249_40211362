@@ -12,6 +12,8 @@ constructors, getters, setters, and methods to represent the client as a string 
 
 package Client;
 
+import Library.*;
+
 public class Client {
 
     // Counter to generate unique IDs
@@ -24,6 +26,8 @@ public class Client {
     private long phoneNumber;
     // Email of the client
     private String email;
+
+    private Items[] items = new Items[100];
 
     // Default constructor
     public Client() {
@@ -89,6 +93,14 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Items[] getItems() {
+        return items;
+    }
+
+    public void setItems(Items[] items) {
+        this.items = items;
     }
 
     // Method to represent the item as a string

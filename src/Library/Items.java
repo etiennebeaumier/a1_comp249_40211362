@@ -92,6 +92,10 @@ public class Items {
         this.publicationYear = publicationYear;
     }
 
+    public static int getCounter() {
+        return counter;
+    }
+
     // Method to represent the item as a string
     @Override
     public String toString() {

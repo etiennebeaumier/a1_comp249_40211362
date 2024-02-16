@@ -12,11 +12,9 @@ constructors, getters, setters, and methods to represent the book as a string an
 
 package Library;
 
-public class Books extends Items {
+public class Books extends Items implements LibraryItem {
 
-    // Counter to generate unique IDs
-    private static int counter;
-    // Number of pages in the book
+    // Counter to generate unique IDs// Number of pages in the book
     private int nbOfPages;
 
     // Default constructor
@@ -24,35 +22,30 @@ public class Books extends Items {
         // Call the constructor of the superclass
         super();
         // Increment the counter
-        counter++;
         // Set the number of pages to 0
         this.nbOfPages = 0;
         // Set the ID with a prefix "B"
-        setID("B" + counter);
+        super.setID("B" + getCounter());
     }
 
     // Constructor with parameters
     public Books(String title, String author, int publicationYear, int nbOfPages) {
         // Call the constructor of the superclass with parameters
         super(title, author, publicationYear);
-        // Increment the counter
-        counter++;
         // Set the number of pages
         this.nbOfPages = nbOfPages;
         // Set the ID with a prefix "B"
-        setID("B" + counter);
+        super.setID("B" + getCounter());
     }
 
     // Copy constructor
     public Books(Books books) {
         // Call the constructor of the superclass with parameters
         super(books.getTitle(), books.getAuthor(), books.getPublicationYear());
-        // Increment the counter
-        counter++;
         // Copy the number of pages
         this.nbOfPages = books.nbOfPages;
         // Set the ID with a prefix "B"
-        setID("B" + counter);
+        super.setID("B" + getCounter());
     }
 
     // Getter and setter for the number of pages
@@ -68,8 +61,8 @@ public class Books extends Items {
     @Override
     public String toString() {
         return "Book " + "ID='" + getID() + '\'' +
-                ", the title is '" + getTitle() + '\'' +
-                ", the author is '" + getAuthor() + '\'' +
+                ", the title is " + getTitle() + '\'' +
+                ", the author is " + getAuthor() + '\'' +
                 ", the publication year is " + getPublicationYear() +
                 " and has " + nbOfPages + " pages";
     }
